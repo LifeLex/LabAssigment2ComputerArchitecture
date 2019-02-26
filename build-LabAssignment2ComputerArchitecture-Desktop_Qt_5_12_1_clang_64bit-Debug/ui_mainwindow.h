@@ -35,7 +35,7 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QGridLayout *gridLayout_4;
-    QSpinBox *spinBox;
+    QSpinBox *VehiculoGuardadoCargarspinBox;
     QGridLayout *Accesorios;
     QCheckBox *BurbujacheckBox;
     QCheckBox *PortavasoscheckBox;
@@ -43,6 +43,7 @@ public:
     QSpinBox *BocinasspinBox;
     QGridLayout *MainConfig;
     QComboBox *ColorcomboBox;
+    QRadioButton *radioButton_2;
     QLabel *label_3;
     QLabel *label_2;
     QLineEdit *nombreLineEdit;
@@ -52,7 +53,8 @@ public:
     QRadioButton *RuedaRpuestoradioButton;
     QLabel *label;
     QLCDNumber *lcdNumber;
-    QRadioButton *radioButton_2;
+    QLabel *label_8;
+    QComboBox *CombustiblecomboBox;
     QPushButton *CargarpushButton;
     QGridLayout *Matricula;
     QPushButton *GenerarpushButton;
@@ -61,7 +63,7 @@ public:
     QPushButton *GuardarpushButton;
     QGridLayout *gridLayout_3;
     QLabel *label_7;
-    QLCDNumber *lcdNumber_2;
+    QLCDNumber *VehiculosGuardadoslcdNumber;
     QListView *ListaVehiculoslistView;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
@@ -83,15 +85,15 @@ public:
         gridLayout_4->setSpacing(6);
         gridLayout_4->setContentsMargins(11, 11, 11, 11);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        spinBox = new QSpinBox(centralWidget);
-        spinBox->setObjectName(QString::fromUtf8("spinBox"));
+        VehiculoGuardadoCargarspinBox = new QSpinBox(centralWidget);
+        VehiculoGuardadoCargarspinBox->setObjectName(QString::fromUtf8("VehiculoGuardadoCargarspinBox"));
         QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(spinBox->sizePolicy().hasHeightForWidth());
-        spinBox->setSizePolicy(sizePolicy1);
+        sizePolicy1.setHeightForWidth(VehiculoGuardadoCargarspinBox->sizePolicy().hasHeightForWidth());
+        VehiculoGuardadoCargarspinBox->setSizePolicy(sizePolicy1);
 
-        gridLayout_4->addWidget(spinBox, 8, 2, 1, 1);
+        gridLayout_4->addWidget(VehiculoGuardadoCargarspinBox, 8, 2, 1, 1);
 
         Accesorios = new QGridLayout();
         Accesorios->setSpacing(6);
@@ -140,6 +142,13 @@ public:
         ColorcomboBox->setSizePolicy(sizePolicy2);
 
         MainConfig->addWidget(ColorcomboBox, 3, 1, 1, 1);
+
+        radioButton_2 = new QRadioButton(centralWidget);
+        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
+        sizePolicy2.setHeightForWidth(radioButton_2->sizePolicy().hasHeightForWidth());
+        radioButton_2->setSizePolicy(sizePolicy2);
+
+        MainConfig->addWidget(radioButton_2, 4, 1, 1, 1);
 
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
@@ -197,12 +206,15 @@ public:
 
         MainConfig->addWidget(lcdNumber, 2, 2, 1, 1);
 
-        radioButton_2 = new QRadioButton(centralWidget);
-        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
-        sizePolicy2.setHeightForWidth(radioButton_2->sizePolicy().hasHeightForWidth());
-        radioButton_2->setSizePolicy(sizePolicy2);
+        label_8 = new QLabel(centralWidget);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
 
-        MainConfig->addWidget(radioButton_2, 4, 1, 1, 1);
+        MainConfig->addWidget(label_8, 5, 0, 1, 1);
+
+        CombustiblecomboBox = new QComboBox(centralWidget);
+        CombustiblecomboBox->setObjectName(QString::fromUtf8("CombustiblecomboBox"));
+
+        MainConfig->addWidget(CombustiblecomboBox, 5, 1, 1, 1);
 
 
         gridLayout_4->addLayout(MainConfig, 0, 0, 1, 1);
@@ -252,12 +264,12 @@ public:
 
         gridLayout_3->addWidget(label_7, 0, 0, 1, 1);
 
-        lcdNumber_2 = new QLCDNumber(centralWidget);
-        lcdNumber_2->setObjectName(QString::fromUtf8("lcdNumber_2"));
-        sizePolicy1.setHeightForWidth(lcdNumber_2->sizePolicy().hasHeightForWidth());
-        lcdNumber_2->setSizePolicy(sizePolicy1);
+        VehiculosGuardadoslcdNumber = new QLCDNumber(centralWidget);
+        VehiculosGuardadoslcdNumber->setObjectName(QString::fromUtf8("VehiculosGuardadoslcdNumber"));
+        sizePolicy1.setHeightForWidth(VehiculosGuardadoslcdNumber->sizePolicy().hasHeightForWidth());
+        VehiculosGuardadoslcdNumber->setSizePolicy(sizePolicy1);
 
-        gridLayout_3->addWidget(lcdNumber_2, 0, 1, 1, 1);
+        gridLayout_3->addWidget(VehiculosGuardadoslcdNumber, 0, 1, 1, 1);
 
 
         gridLayout_4->addLayout(gridLayout_3, 3, 0, 1, 1);
@@ -290,12 +302,13 @@ public:
         BurbujacheckBox->setText(QApplication::translate("MainWindow", "Burbuja", nullptr));
         PortavasoscheckBox->setText(QApplication::translate("MainWindow", "Portavasos Gigante", nullptr));
         label_5->setText(QApplication::translate("MainWindow", "Numero de Bocinas", nullptr));
+        radioButton_2->setText(QApplication::translate("MainWindow", "Kit de reparacion", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "HP", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Numero Ruedas", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "Color", nullptr));
         RuedaRpuestoradioButton->setText(QApplication::translate("MainWindow", "Rueda de repuesto", nullptr));
         label->setText(QApplication::translate("MainWindow", "Nombre", nullptr));
-        radioButton_2->setText(QApplication::translate("MainWindow", "Kit de reparacion", nullptr));
+        label_8->setText(QApplication::translate("MainWindow", "Tipo de Combustible", nullptr));
         CargarpushButton->setText(QApplication::translate("MainWindow", "Cargar Vehiculo Numero", nullptr));
         GenerarpushButton->setText(QApplication::translate("MainWindow", "Generar Matricula", nullptr));
         label_6->setText(QApplication::translate("MainWindow", "Matricula", nullptr));
