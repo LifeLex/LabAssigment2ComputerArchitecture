@@ -8,3 +8,9 @@ vehiculo::vehiculo()
 
     //setters this->x=x;
 }
+
+//Destructor
+vehiculo::~vehiculo()
+{
+
+}
