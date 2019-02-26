@@ -35,7 +35,12 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QGridLayout *gridLayout_4;
-    QPushButton *GuardarpushButton;
+    QSpinBox *spinBox;
+    QGridLayout *Accesorios;
+    QCheckBox *BurbujacheckBox;
+    QCheckBox *PortavasoscheckBox;
+    QLabel *label_5;
+    QSpinBox *BocinasspinBox;
     QGridLayout *MainConfig;
     QComboBox *ColorcomboBox;
     QLabel *label_3;
@@ -48,16 +53,15 @@ public:
     QLabel *label;
     QLCDNumber *lcdNumber;
     QRadioButton *radioButton_2;
-    QGridLayout *Accesorios;
-    QCheckBox *BurbujacheckBox;
-    QCheckBox *PortavasoscheckBox;
-    QLabel *label_5;
-    QSpinBox *BocinasspinBox;
+    QPushButton *CargarpushButton;
     QGridLayout *Matricula;
+    QPushButton *GenerarpushButton;
     QLabel *label_6;
     QLineEdit *lineEdit;
-    QPushButton *GenerarpushButton;
-    QPushButton *CargarpushButton;
+    QPushButton *GuardarpushButton;
+    QGridLayout *gridLayout_3;
+    QLabel *label_7;
+    QLCDNumber *lcdNumber_2;
     QListView *ListaVehiculoslistView;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
@@ -67,7 +71,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(685, 408);
+        MainWindow->resize(808, 489);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
@@ -79,107 +83,33 @@ public:
         gridLayout_4->setSpacing(6);
         gridLayout_4->setContentsMargins(11, 11, 11, 11);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        GuardarpushButton = new QPushButton(centralWidget);
-        GuardarpushButton->setObjectName(QString::fromUtf8("GuardarpushButton"));
-
-        gridLayout_4->addWidget(GuardarpushButton, 3, 0, 1, 1);
-
-        MainConfig = new QGridLayout();
-        MainConfig->setSpacing(6);
-        MainConfig->setObjectName(QString::fromUtf8("MainConfig"));
-        ColorcomboBox = new QComboBox(centralWidget);
-        ColorcomboBox->setObjectName(QString::fromUtf8("ColorcomboBox"));
-        QSizePolicy sizePolicy1(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
+        spinBox = new QSpinBox(centralWidget);
+        spinBox->setObjectName(QString::fromUtf8("spinBox"));
+        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(ColorcomboBox->sizePolicy().hasHeightForWidth());
-        ColorcomboBox->setSizePolicy(sizePolicy1);
+        sizePolicy1.setHeightForWidth(spinBox->sizePolicy().hasHeightForWidth());
+        spinBox->setSizePolicy(sizePolicy1);
 
-        MainConfig->addWidget(ColorcomboBox, 3, 1, 1, 1);
-
-        label_3 = new QLabel(centralWidget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-
-        MainConfig->addWidget(label_3, 2, 0, 1, 1);
-
-        label_2 = new QLabel(centralWidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-
-        MainConfig->addWidget(label_2, 1, 0, 1, 1);
-
-        nombreLineEdit = new QLineEdit(centralWidget);
-        nombreLineEdit->setObjectName(QString::fromUtf8("nombreLineEdit"));
-        sizePolicy1.setHeightForWidth(nombreLineEdit->sizePolicy().hasHeightForWidth());
-        nombreLineEdit->setSizePolicy(sizePolicy1);
-
-        MainConfig->addWidget(nombreLineEdit, 0, 1, 1, 1);
-
-        NRuedascomboBox = new QComboBox(centralWidget);
-        NRuedascomboBox->setObjectName(QString::fromUtf8("NRuedascomboBox"));
-        sizePolicy1.setHeightForWidth(NRuedascomboBox->sizePolicy().hasHeightForWidth());
-        NRuedascomboBox->setSizePolicy(sizePolicy1);
-
-        MainConfig->addWidget(NRuedascomboBox, 1, 1, 1, 1);
-
-        label_4 = new QLabel(centralWidget);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-
-        MainConfig->addWidget(label_4, 3, 0, 1, 1);
-
-        HPSlider = new QSlider(centralWidget);
-        HPSlider->setObjectName(QString::fromUtf8("HPSlider"));
-        sizePolicy1.setHeightForWidth(HPSlider->sizePolicy().hasHeightForWidth());
-        HPSlider->setSizePolicy(sizePolicy1);
-        HPSlider->setOrientation(Qt::Horizontal);
-
-        MainConfig->addWidget(HPSlider, 2, 1, 1, 1);
-
-        RuedaRpuestoradioButton = new QRadioButton(centralWidget);
-        RuedaRpuestoradioButton->setObjectName(QString::fromUtf8("RuedaRpuestoradioButton"));
-        sizePolicy1.setHeightForWidth(RuedaRpuestoradioButton->sizePolicy().hasHeightForWidth());
-        RuedaRpuestoradioButton->setSizePolicy(sizePolicy1);
-
-        MainConfig->addWidget(RuedaRpuestoradioButton, 4, 0, 1, 1);
-
-        label = new QLabel(centralWidget);
-        label->setObjectName(QString::fromUtf8("label"));
-
-        MainConfig->addWidget(label, 0, 0, 1, 1);
-
-        lcdNumber = new QLCDNumber(centralWidget);
-        lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
-        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(lcdNumber->sizePolicy().hasHeightForWidth());
-        lcdNumber->setSizePolicy(sizePolicy2);
-
-        MainConfig->addWidget(lcdNumber, 2, 2, 1, 1);
-
-        radioButton_2 = new QRadioButton(centralWidget);
-        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
-        sizePolicy1.setHeightForWidth(radioButton_2->sizePolicy().hasHeightForWidth());
-        radioButton_2->setSizePolicy(sizePolicy1);
-
-        MainConfig->addWidget(radioButton_2, 4, 1, 1, 1);
-
-
-        gridLayout_4->addLayout(MainConfig, 0, 0, 1, 1);
+        gridLayout_4->addWidget(spinBox, 8, 2, 1, 1);
 
         Accesorios = new QGridLayout();
         Accesorios->setSpacing(6);
         Accesorios->setObjectName(QString::fromUtf8("Accesorios"));
         BurbujacheckBox = new QCheckBox(centralWidget);
         BurbujacheckBox->setObjectName(QString::fromUtf8("BurbujacheckBox"));
-        sizePolicy1.setHeightForWidth(BurbujacheckBox->sizePolicy().hasHeightForWidth());
-        BurbujacheckBox->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy2(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(BurbujacheckBox->sizePolicy().hasHeightForWidth());
+        BurbujacheckBox->setSizePolicy(sizePolicy2);
 
         Accesorios->addWidget(BurbujacheckBox, 0, 0, 1, 1);
 
         PortavasoscheckBox = new QCheckBox(centralWidget);
         PortavasoscheckBox->setObjectName(QString::fromUtf8("PortavasoscheckBox"));
-        sizePolicy1.setHeightForWidth(PortavasoscheckBox->sizePolicy().hasHeightForWidth());
-        PortavasoscheckBox->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(PortavasoscheckBox->sizePolicy().hasHeightForWidth());
+        PortavasoscheckBox->setSizePolicy(sizePolicy2);
 
         Accesorios->addWidget(PortavasoscheckBox, 0, 1, 1, 1);
 
@@ -201,9 +131,97 @@ public:
 
         gridLayout_4->addLayout(Accesorios, 1, 0, 1, 1);
 
+        MainConfig = new QGridLayout();
+        MainConfig->setSpacing(6);
+        MainConfig->setObjectName(QString::fromUtf8("MainConfig"));
+        ColorcomboBox = new QComboBox(centralWidget);
+        ColorcomboBox->setObjectName(QString::fromUtf8("ColorcomboBox"));
+        sizePolicy2.setHeightForWidth(ColorcomboBox->sizePolicy().hasHeightForWidth());
+        ColorcomboBox->setSizePolicy(sizePolicy2);
+
+        MainConfig->addWidget(ColorcomboBox, 3, 1, 1, 1);
+
+        label_3 = new QLabel(centralWidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        MainConfig->addWidget(label_3, 2, 0, 1, 1);
+
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        MainConfig->addWidget(label_2, 1, 0, 1, 1);
+
+        nombreLineEdit = new QLineEdit(centralWidget);
+        nombreLineEdit->setObjectName(QString::fromUtf8("nombreLineEdit"));
+        sizePolicy2.setHeightForWidth(nombreLineEdit->sizePolicy().hasHeightForWidth());
+        nombreLineEdit->setSizePolicy(sizePolicy2);
+
+        MainConfig->addWidget(nombreLineEdit, 0, 1, 1, 1);
+
+        NRuedascomboBox = new QComboBox(centralWidget);
+        NRuedascomboBox->setObjectName(QString::fromUtf8("NRuedascomboBox"));
+        sizePolicy2.setHeightForWidth(NRuedascomboBox->sizePolicy().hasHeightForWidth());
+        NRuedascomboBox->setSizePolicy(sizePolicy2);
+
+        MainConfig->addWidget(NRuedascomboBox, 1, 1, 1, 1);
+
+        label_4 = new QLabel(centralWidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+
+        MainConfig->addWidget(label_4, 3, 0, 1, 1);
+
+        HPSlider = new QSlider(centralWidget);
+        HPSlider->setObjectName(QString::fromUtf8("HPSlider"));
+        sizePolicy2.setHeightForWidth(HPSlider->sizePolicy().hasHeightForWidth());
+        HPSlider->setSizePolicy(sizePolicy2);
+        HPSlider->setOrientation(Qt::Horizontal);
+
+        MainConfig->addWidget(HPSlider, 2, 1, 1, 1);
+
+        RuedaRpuestoradioButton = new QRadioButton(centralWidget);
+        RuedaRpuestoradioButton->setObjectName(QString::fromUtf8("RuedaRpuestoradioButton"));
+        sizePolicy2.setHeightForWidth(RuedaRpuestoradioButton->sizePolicy().hasHeightForWidth());
+        RuedaRpuestoradioButton->setSizePolicy(sizePolicy2);
+
+        MainConfig->addWidget(RuedaRpuestoradioButton, 4, 0, 1, 1);
+
+        label = new QLabel(centralWidget);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        MainConfig->addWidget(label, 0, 0, 1, 1);
+
+        lcdNumber = new QLCDNumber(centralWidget);
+        lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
+        sizePolicy1.setHeightForWidth(lcdNumber->sizePolicy().hasHeightForWidth());
+        lcdNumber->setSizePolicy(sizePolicy1);
+
+        MainConfig->addWidget(lcdNumber, 2, 2, 1, 1);
+
+        radioButton_2 = new QRadioButton(centralWidget);
+        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
+        sizePolicy2.setHeightForWidth(radioButton_2->sizePolicy().hasHeightForWidth());
+        radioButton_2->setSizePolicy(sizePolicy2);
+
+        MainConfig->addWidget(radioButton_2, 4, 1, 1, 1);
+
+
+        gridLayout_4->addLayout(MainConfig, 0, 0, 1, 1);
+
+        CargarpushButton = new QPushButton(centralWidget);
+        CargarpushButton->setObjectName(QString::fromUtf8("CargarpushButton"));
+        sizePolicy2.setHeightForWidth(CargarpushButton->sizePolicy().hasHeightForWidth());
+        CargarpushButton->setSizePolicy(sizePolicy2);
+
+        gridLayout_4->addWidget(CargarpushButton, 8, 1, 1, 1);
+
         Matricula = new QGridLayout();
         Matricula->setSpacing(6);
         Matricula->setObjectName(QString::fromUtf8("Matricula"));
+        GenerarpushButton = new QPushButton(centralWidget);
+        GenerarpushButton->setObjectName(QString::fromUtf8("GenerarpushButton"));
+
+        Matricula->addWidget(GenerarpushButton, 1, 0, 1, 2);
+
         label_6 = new QLabel(centralWidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
 
@@ -216,28 +234,43 @@ public:
 
         Matricula->addWidget(lineEdit, 0, 1, 1, 1);
 
-        GenerarpushButton = new QPushButton(centralWidget);
-        GenerarpushButton->setObjectName(QString::fromUtf8("GenerarpushButton"));
-
-        Matricula->addWidget(GenerarpushButton, 1, 0, 1, 2);
-
 
         gridLayout_4->addLayout(Matricula, 2, 0, 1, 1);
 
-        CargarpushButton = new QPushButton(centralWidget);
-        CargarpushButton->setObjectName(QString::fromUtf8("CargarpushButton"));
+        GuardarpushButton = new QPushButton(centralWidget);
+        GuardarpushButton->setObjectName(QString::fromUtf8("GuardarpushButton"));
 
-        gridLayout_4->addWidget(CargarpushButton, 3, 1, 1, 1);
+        gridLayout_4->addWidget(GuardarpushButton, 8, 0, 1, 1);
+
+        gridLayout_3 = new QGridLayout();
+        gridLayout_3->setSpacing(6);
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        label_7 = new QLabel(centralWidget);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        sizePolicy1.setHeightForWidth(label_7->sizePolicy().hasHeightForWidth());
+        label_7->setSizePolicy(sizePolicy1);
+
+        gridLayout_3->addWidget(label_7, 0, 0, 1, 1);
+
+        lcdNumber_2 = new QLCDNumber(centralWidget);
+        lcdNumber_2->setObjectName(QString::fromUtf8("lcdNumber_2"));
+        sizePolicy1.setHeightForWidth(lcdNumber_2->sizePolicy().hasHeightForWidth());
+        lcdNumber_2->setSizePolicy(sizePolicy1);
+
+        gridLayout_3->addWidget(lcdNumber_2, 0, 1, 1, 1);
+
+
+        gridLayout_4->addLayout(gridLayout_3, 3, 0, 1, 1);
 
         ListaVehiculoslistView = new QListView(centralWidget);
         ListaVehiculoslistView->setObjectName(QString::fromUtf8("ListaVehiculoslistView"));
 
-        gridLayout_4->addWidget(ListaVehiculoslistView, 0, 1, 3, 1);
+        gridLayout_4->addWidget(ListaVehiculoslistView, 0, 1, 4, 2);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 685, 22));
+        menuBar->setGeometry(QRect(0, 0, 808, 22));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -254,19 +287,20 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        GuardarpushButton->setText(QApplication::translate("MainWindow", "Guardar", nullptr));
+        BurbujacheckBox->setText(QApplication::translate("MainWindow", "Burbuja", nullptr));
+        PortavasoscheckBox->setText(QApplication::translate("MainWindow", "Portavasos Gigante", nullptr));
+        label_5->setText(QApplication::translate("MainWindow", "Numero de Bocinas", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "HP", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Numero Ruedas", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "Color", nullptr));
         RuedaRpuestoradioButton->setText(QApplication::translate("MainWindow", "Rueda de repuesto", nullptr));
         label->setText(QApplication::translate("MainWindow", "Nombre", nullptr));
         radioButton_2->setText(QApplication::translate("MainWindow", "Kit de reparacion", nullptr));
-        BurbujacheckBox->setText(QApplication::translate("MainWindow", "Burbuja", nullptr));
-        PortavasoscheckBox->setText(QApplication::translate("MainWindow", "Portavasos Gigante", nullptr));
-        label_5->setText(QApplication::translate("MainWindow", "Numero de Bocinas", nullptr));
-        label_6->setText(QApplication::translate("MainWindow", "Matricula", nullptr));
+        CargarpushButton->setText(QApplication::translate("MainWindow", "Cargar Vehiculo Numero", nullptr));
         GenerarpushButton->setText(QApplication::translate("MainWindow", "Generar Matricula", nullptr));
-        CargarpushButton->setText(QApplication::translate("MainWindow", "Cargar", nullptr));
+        label_6->setText(QApplication::translate("MainWindow", "Matricula", nullptr));
+        GuardarpushButton->setText(QApplication::translate("MainWindow", "Guardar", nullptr));
+        label_7->setText(QApplication::translate("MainWindow", "Numero de Vehiculos guardados", nullptr));
     } // retranslateUi
 
 };
