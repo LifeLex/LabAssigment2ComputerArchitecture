@@ -23,7 +23,7 @@ void MainWindow::on_GuardarpushButton_clicked()
 
 }
 
-void MainWindow::on_GenerarpushButton_clicked() public vehiculo
+void MainWindow::on_GenerarpushButton_clicked(vehiculo *vehiculo)
 {
     srand(time(NULL));
     string nmatricula;
@@ -44,6 +44,6 @@ void MainWindow::on_GenerarpushButton_clicked() public vehiculo
     }
     nmatricula=string(matricula);
     ui->MatriculalineEdit->setText(QString::fromStdString(nmatricula));
-
+    vehiculo->setMatricula(matricula)
 
 }

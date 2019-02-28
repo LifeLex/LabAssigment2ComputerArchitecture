@@ -8,22 +8,25 @@ namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow , public vehiculo
+{
+
     Q_OBJECT
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    //vector de vehiculos para guardarlos todos
+
 
 private slots:
     void on_GuardarpushButton_clicked();
 
-    void on_GenerarpushButton_clicked();
+    void on_GenerarpushButton_clicked(vehiculo *vehiculo);
 
 private:
     Ui::MainWindow *ui;
+    //vector de vehiculos para guardarlos todos
 };
 
 #endif // MAINWINDOW_H
