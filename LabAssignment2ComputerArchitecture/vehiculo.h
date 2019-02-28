@@ -27,7 +27,8 @@ public:
     int getNumeroBocinas();
     //Matricula
     string getMatricula();
-
+    //Vector Coches
+    vector<vehiculo> getCochera();
 
     //setters
     //Main Configuration
@@ -46,6 +47,8 @@ public:
     //Matricula
     void setMatricula(string Matricula);
 
+    //Vector cochera
+    vector<vehiculo> setCochera();
 
 
 private:
@@ -66,6 +69,8 @@ private:
     //Matricula
     string Matricula;
 
+    //Vector para guardar coches
+    vector<vehiculo> garaje;
 };
 
 #endif // VEHICULO_H

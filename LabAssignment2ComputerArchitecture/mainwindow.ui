@@ -88,6 +88,26 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <item>
+         <property name="text">
+          <string>Rojo</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Azul</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Amarillo</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Verde</string>
+         </property>
+        </item>
        </widget>
       </item>
       <item row="4" column="1">
@@ -135,6 +155,21 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <item>
+         <property name="text">
+          <string>2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>30</string>
+         </property>
+        </item>
        </widget>
       </item>
       <item row="3" column="0">
@@ -195,7 +230,23 @@
        </widget>
       </item>
       <item row="5" column="1">
-       <widget class="QComboBox" name="CombustiblecomboBox"/>
+       <widget class="QComboBox" name="CombustiblecomboBox">
+        <item>
+         <property name="text">
+          <string>Gasolina</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Diesel</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Electrico</string>
+         </property>
+        </item>
+       </widget>
       </item>
      </layout>
     </item>
@@ -229,7 +280,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="MatriculalineEdit">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
           <horstretch>0</horstretch>

@@ -59,7 +59,7 @@ public:
     QGridLayout *Matricula;
     QPushButton *GenerarpushButton;
     QLabel *label_6;
-    QLineEdit *lineEdit;
+    QLineEdit *MatriculalineEdit;
     QPushButton *GuardarpushButton;
     QGridLayout *gridLayout_3;
     QLabel *label_7;
@@ -137,6 +137,10 @@ public:
         MainConfig->setSpacing(6);
         MainConfig->setObjectName(QString::fromUtf8("MainConfig"));
         ColorcomboBox = new QComboBox(centralWidget);
+        ColorcomboBox->addItem(QString());
+        ColorcomboBox->addItem(QString());
+        ColorcomboBox->addItem(QString());
+        ColorcomboBox->addItem(QString());
         ColorcomboBox->setObjectName(QString::fromUtf8("ColorcomboBox"));
         sizePolicy2.setHeightForWidth(ColorcomboBox->sizePolicy().hasHeightForWidth());
         ColorcomboBox->setSizePolicy(sizePolicy2);
@@ -168,6 +172,9 @@ public:
         MainConfig->addWidget(nombreLineEdit, 0, 1, 1, 1);
 
         NRuedascomboBox = new QComboBox(centralWidget);
+        NRuedascomboBox->addItem(QString());
+        NRuedascomboBox->addItem(QString());
+        NRuedascomboBox->addItem(QString());
         NRuedascomboBox->setObjectName(QString::fromUtf8("NRuedascomboBox"));
         sizePolicy2.setHeightForWidth(NRuedascomboBox->sizePolicy().hasHeightForWidth());
         NRuedascomboBox->setSizePolicy(sizePolicy2);
@@ -212,6 +219,9 @@ public:
         MainConfig->addWidget(label_8, 5, 0, 1, 1);
 
         CombustiblecomboBox = new QComboBox(centralWidget);
+        CombustiblecomboBox->addItem(QString());
+        CombustiblecomboBox->addItem(QString());
+        CombustiblecomboBox->addItem(QString());
         CombustiblecomboBox->setObjectName(QString::fromUtf8("CombustiblecomboBox"));
 
         MainConfig->addWidget(CombustiblecomboBox, 5, 1, 1, 1);
@@ -239,12 +249,12 @@ public:
 
         Matricula->addWidget(label_6, 0, 0, 1, 1);
 
-        lineEdit = new QLineEdit(centralWidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        sizePolicy3.setHeightForWidth(lineEdit->sizePolicy().hasHeightForWidth());
-        lineEdit->setSizePolicy(sizePolicy3);
+        MatriculalineEdit = new QLineEdit(centralWidget);
+        MatriculalineEdit->setObjectName(QString::fromUtf8("MatriculalineEdit"));
+        sizePolicy3.setHeightForWidth(MatriculalineEdit->sizePolicy().hasHeightForWidth());
+        MatriculalineEdit->setSizePolicy(sizePolicy3);
 
-        Matricula->addWidget(lineEdit, 0, 1, 1, 1);
+        Matricula->addWidget(MatriculalineEdit, 0, 1, 1, 1);
 
 
         gridLayout_4->addLayout(Matricula, 2, 0, 1, 1);
@@ -302,13 +312,26 @@ public:
         BurbujacheckBox->setText(QApplication::translate("MainWindow", "Burbuja", nullptr));
         PortavasoscheckBox->setText(QApplication::translate("MainWindow", "Portavasos Gigante", nullptr));
         label_5->setText(QApplication::translate("MainWindow", "Numero de Bocinas", nullptr));
+        ColorcomboBox->setItemText(0, QApplication::translate("MainWindow", "Rojo", nullptr));
+        ColorcomboBox->setItemText(1, QApplication::translate("MainWindow", "Azul", nullptr));
+        ColorcomboBox->setItemText(2, QApplication::translate("MainWindow", "Amarillo", nullptr));
+        ColorcomboBox->setItemText(3, QApplication::translate("MainWindow", "Verde", nullptr));
+
         radioButton_2->setText(QApplication::translate("MainWindow", "Kit de reparacion", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "HP", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Numero Ruedas", nullptr));
+        NRuedascomboBox->setItemText(0, QApplication::translate("MainWindow", "2", nullptr));
+        NRuedascomboBox->setItemText(1, QApplication::translate("MainWindow", "4", nullptr));
+        NRuedascomboBox->setItemText(2, QApplication::translate("MainWindow", "30", nullptr));
+
         label_4->setText(QApplication::translate("MainWindow", "Color", nullptr));
         RuedaRpuestoradioButton->setText(QApplication::translate("MainWindow", "Rueda de repuesto", nullptr));
         label->setText(QApplication::translate("MainWindow", "Nombre", nullptr));
         label_8->setText(QApplication::translate("MainWindow", "Tipo de Combustible", nullptr));
+        CombustiblecomboBox->setItemText(0, QApplication::translate("MainWindow", "Gasolina", nullptr));
+        CombustiblecomboBox->setItemText(1, QApplication::translate("MainWindow", "Diesel", nullptr));
+        CombustiblecomboBox->setItemText(2, QApplication::translate("MainWindow", "Electrico", nullptr));
+
         CargarpushButton->setText(QApplication::translate("MainWindow", "Cargar Vehiculo Numero", nullptr));
         GenerarpushButton->setText(QApplication::translate("MainWindow", "Generar Matricula", nullptr));
         label_6->setText(QApplication::translate("MainWindow", "Matricula", nullptr));
