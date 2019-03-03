@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <vehiculo.h>
+#include "vehiculo.h"
 
 namespace Ui {
 class MainWindow;

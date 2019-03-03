@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[4];
-    char stringdata0[70];
+    QByteArrayData data[6];
+    char stringdata0[89];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,11 +34,14 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 28), // "on_GuardarpushButton_clicked"
 QT_MOC_LITERAL(2, 40, 0), // ""
-QT_MOC_LITERAL(3, 41, 28) // "on_GenerarpushButton_clicked"
+QT_MOC_LITERAL(3, 41, 28), // "on_GenerarpushButton_clicked"
+QT_MOC_LITERAL(4, 70, 9), // "vehiculo*"
+QT_MOC_LITERAL(5, 80, 8) // "vehiculo"
 
     },
     "MainWindow\0on_GuardarpushButton_clicked\0"
-    "\0on_GenerarpushButton_clicked"
+    "\0on_GenerarpushButton_clicked\0vehiculo*\0"
+    "vehiculo"
 };
 #undef QT_MOC_LITERAL
 
@@ -57,11 +60,11 @@ static const uint qt_meta_data_MainWindow[] = {
 
  // slots: name, argc, parameters, tag, flags
        1,    0,   24,    2, 0x08 /* Private */,
-       3,    0,   25,    2, 0x08 /* Private */,
+       3,    1,   25,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 4,    5,
 
        0        // eod
 };
@@ -73,11 +76,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_GuardarpushButton_clicked(); break;
-        case 1: _t->on_GenerarpushButton_clicked(); break;
+        case 1: _t->on_GenerarpushButton_clicked((*reinterpret_cast< vehiculo*(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject MainWindow::staticMetaObject = { {
