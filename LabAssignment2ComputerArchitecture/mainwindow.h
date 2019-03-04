@@ -20,6 +20,7 @@ public:
 
 
 
+
 private slots:
     void on_GuardarpushButton_clicked();
 
@@ -27,7 +28,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    //vector de vehiculos para guardarlos todos
+    //Vector para guardar coches
+    vector<vehiculo> garaje;
+    vehiculo *coche = new vehiculo;
 };
 
 #endif // MAINWINDOW_H

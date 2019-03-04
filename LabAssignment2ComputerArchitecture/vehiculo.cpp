@@ -32,6 +32,12 @@ void vehiculo::setHP(string HP)
     this->HP= HP;
 }
 
+void vehiculo::setFuel(string Fuel)
+{
+    this->Fuel= Fuel;
+}
+
+
 void vehiculo::setRuedaRepuesto(string RuedaRepuesto)
 {
     this->RuedaRepuesto= RuedaRepuesto;
@@ -69,11 +75,7 @@ void vehiculo::setMatricula(string Matricula)
     this->Matricula= Matricula;
 }
 
-//Vector Coches
-vector<vehiculo> vehiculo::getCochera()
-{
-    return garaje;
-}
+
 
 //toString
 string vehiculo::toString()
