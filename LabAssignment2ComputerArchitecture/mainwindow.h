@@ -23,7 +23,7 @@ public:
 private slots:
     void on_GuardarpushButton_clicked();
 
-    void on_GenerarpushButton_clicked(vehiculo *vehiculo);
+    void on_GenerarpushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

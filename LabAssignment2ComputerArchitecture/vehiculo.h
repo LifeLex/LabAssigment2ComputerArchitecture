@@ -2,7 +2,7 @@
 #define VEHICULO_H
 #include <string>
 #include <vector>
-
+#include <iostream>
 
 using namespace std;
 
@@ -16,15 +16,15 @@ public:
     //getters
     //Main Configuration
     string getNombre();
-    int getRuedas();
-    int getHP();
-    bool getRuedaRepuesto();
-    bool getKitReparacion();
+    string getRuedas();
+    string getHP();
+    string getRuedaRepuesto();
+    string getKitReparacion();
     string getColor();
     //Accesorios
-    bool getBurbuja();
-    bool getPortavasos();
-    int getNumeroBocinas();
+    string getBurbuja();
+    string getPortavasos();
+    string getNumeroBocinas();
     //Matricula
     string getMatricula();
     //Vector Coches
@@ -33,16 +33,16 @@ public:
     //setters
     //Main Configuration
     void setNombre(string Nombre);
-    void setRuedas(int Ruedas);
-    void setHP(int HP);
-    void setRuedaRepuesto(bool RuedaRepuesto);
-    void setKitReparcion(bool KitReparacion);
+    void setRuedas(string Ruedas);
+    void setHP(string HP);
+    void setRuedaRepuesto(string RuedaRepuesto);
+    void setKitReparcion(string KitReparacion);
     void setColor(string Color);
 
     //Accesorios
-    void setBurbuja(bool Burbuja);
-    void setPortavasos(bool Portavasos);
-    void setNumeroBocinas(int NumeroBocinas);
+    void setBurbuja(string Burbuja);
+    void setPortavasos(string Portavasos);
+    void setNumeroBocinas(string NumeroBocinas);
 
     //Matricula
     void setMatricula(string Matricula);
@@ -50,21 +50,23 @@ public:
     //Vector cochera
     vector<vehiculo> setCochera();
 
+    //toString
+    string toString();
 
 private:
     //atributos
     //Main Config
     string Nombre;
-    int Ruedas;
-    int HP;
-    bool RuedaRepuesto;
-    bool KitReparacion;
+    string Ruedas;
+    string HP;
+    string RuedaRepuesto;
+    string KitReparacion;
     string Color;
 
     //Accesorios
-    bool Burbuja;
-    bool Portavasos;
-    int NumeroBocinas;
+    string Burbuja;
+    string Portavasos;
+    string NumeroBocinas;
 
     //Matricula
     string Matricula;
