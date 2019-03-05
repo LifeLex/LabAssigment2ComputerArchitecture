@@ -9,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->textEdit->isReadOnly();
+
 }
 
 MainWindow::~MainWindow()
@@ -16,8 +18,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+//GUARDAR
 void MainWindow::on_GuardarpushButton_clicked()
 {
+    ui->HPSlider->setRange(0,999);
+    ui->HPSlider->setValue(0);
 
     //atributos locales
     //Main Config
@@ -38,19 +44,22 @@ void MainWindow::on_GuardarpushButton_clicked()
     //nombre
     QString QSNombre = ui->nombreLineEdit->text();
     lNombre = QSNombre.toStdString();
+    ui->nombreLineEdit->setText("");
     //ruedas
     lRuedas = ui->NRuedascomboBox->currentText().toStdString();
     //HP
     int lPotencia = ui->HPSlider->value();
+    ui->lcdNumber->display(lPotencia);
     lHP = to_string(lPotencia);
     //Color
     lColor = ui->ColorcomboBox->currentText().toStdString();
     //Rueda o Kit
     if (ui->RuedaRpuestoradioButton->isChecked()) {
         lRuedaRepuesto = "Rueda de Repuesto";
-    }
-    if (ui->KitRadioButton->isChecked()) {
+        lKitReparacion = "Sin Kit de Reparacion";
+    } else if (ui->KitRadioButton->isChecked()) {
         lKitReparacion = "Kit de Reparacion";
+        lRuedaRepuesto= "Sin rueda de repuesto";
     }
     //Fuel
     lFuel = ui->CombustiblecomboBox->currentText().toStdString();
@@ -59,13 +68,18 @@ void MainWindow::on_GuardarpushButton_clicked()
     //Portavasos
     if (ui->PortavasoscheckBox->isChecked()) {
         lPortavasos = "Portavasos";
+    }else {
+        lPortavasos= "Coche sin Portavasos";
     }
     //Burbuja
     if (ui->BurbujacheckBox->isChecked()) {
         lBurbuja= "Burbuja";
+    }else {
+        lBurbuja= "Coche sin Burbuja";
     }
     //Bocinas
-    lNumeroBocinas= ui->BocinasspinBox->value();
+    int bocinas= ui->BocinasspinBox->value();
+    lNumeroBocinas = std::to_string(bocinas);
     //Problemas con el lNumeroBocinas no guarda el valor
 
 
@@ -73,16 +87,21 @@ void MainWindow::on_GuardarpushButton_clicked()
 
     //Logica para identificar tipo de vehiculo
     //El coche de homer tendra Burbuja Posavasos Color Verde y mas de 5 bocinas
-    if (lRuedas=="4" && lColor=="Verde" && ui->BurbujacheckBox->isChecked() && ui->PortavasoscheckBox->isChecked()) {
-        //Coche de homer en plaiText o en lista
-
+    if (lRuedas=="30" && lColor=="Verde" && ui->BurbujacheckBox->isChecked() && ui->PortavasoscheckBox->isChecked() && lNumeroBocinas=="5") {
+        //Coche de homer
+        ui->lineEdit->setText("EL CARRO DE HOMERO");
+        coche->setOpcion("EL CARRO DE HOMERO");
     }
 
     if (lRuedas=="4") {
         //Coche
+        ui->lineEdit->setText("Un coche");
+        coche->setOpcion("Un coche");
     }
     if (lRuedas== "2") {
         //Moto
+        ui->lineEdit->setText("Una Moto");
+        coche->setOpcion("Una moto");
     }
 
 
@@ -103,14 +122,26 @@ void MainWindow::on_GuardarpushButton_clicked()
 
     //Numero de coches guardados
     int n = garaje.size();
+
+
     ui->VehiculosGuardadoslcdNumber->display(n);
     //Le asigno el numero maximo de vehiculos al spinbox de cargar
-    ui->VehiculoGuardadoCargarspinBox->setMaximum(n);
+
+    ui->VehiculoGuardadoCargarspinBox->setMaximum(n-1);
     //Guardar en la lista
     ui->textEdit->setPlainText(QString::fromStdString(coche->toString()));
 
+
+
+
+
+
+
 }
 
+
+
+//MATRICULA
 void MainWindow::on_GenerarpushButton_clicked()
 {
 
@@ -133,8 +164,29 @@ void MainWindow::on_GenerarpushButton_clicked()
             nmatricula.push_back(caracteres[rand()%caracteres.length()]);
         }
     }
-
+    coche->setMatricula(nmatricula);
     ui->MatriculalineEdit->setText(QString::fromStdString(nmatricula));
 
 
 }
+
+void MainWindow::on_ResetpushButton_clicked()
+{
+
+    garaje.clear();
+    ui->textEdit->setText(QString::fromStdString(""));
+    ui->lineEdit->setText(QString::fromStdString(""));
+    ui->MatriculalineEdit->setText(QString::fromStdString(""));
+
+}
+
+void MainWindow::on_CargarpushButton_clicked()
+{
+
+    int n = ui->VehiculoGuardadoCargarspinBox->value();
+    vehiculo coche = garaje[n];
+    ui->textEdit->setText(QString::fromStdString(coche.toString()));
+    ui->lineEdit->setText(QString::fromStdString(coche.getOpcion()));
+}
+
+

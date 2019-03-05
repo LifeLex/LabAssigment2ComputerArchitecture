@@ -26,6 +26,12 @@ private slots:
 
     void on_GenerarpushButton_clicked();
 
+    void on_CargarpushButton_clicked();
+
+
+
+    void on_ResetpushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     //Vector para guardar coches

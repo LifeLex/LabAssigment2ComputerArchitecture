@@ -75,22 +75,43 @@ void vehiculo::setMatricula(string Matricula)
     this->Matricula= Matricula;
 }
 
+//Opcion
+void vehiculo::setOpcion(string NombreOpcion)
+{
+    this->NombreOpcion= NombreOpcion;
+}
 
+string vehiculo::getOpcion()
+{
+    return NombreOpcion;
+}
 
 //toString
 string vehiculo::toString()
 {
     string txt;
     txt.append(Nombre);
+    txt.append("\n");
     txt.append(Ruedas);
+    txt.append("\n");
     txt.append(HP);
+    txt.append("\n");
+    txt.append(Fuel);
+    txt.append("\n");
     txt.append(RuedaRepuesto);
+    txt.append("\n");
     txt.append(KitReparacion);
+    txt.append("\n");
     txt.append(Color);
+    txt.append("\n");
     txt.append(Burbuja);
+    txt.append("\n");
     txt.append(Portavasos);
+    txt.append("\n");
     txt.append(NumeroBocinas);
+    txt.append("\n");
     txt.append(Matricula);
+
 
     return txt;
 }

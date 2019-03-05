@@ -28,7 +28,8 @@ public:
     string getNumeroBocinas();
     //Matricula
     string getMatricula();
-    //Vector Coches
+    //Opcion
+    string getOpcion();
 
 
     //setters
@@ -48,6 +49,10 @@ public:
 
     //Matricula
     void setMatricula(string Matricula);
+
+
+    //Opcion
+    void setOpcion(string NombreOpcion);
 
 
 
@@ -73,6 +78,8 @@ private:
     //Matricula
     string Matricula;
 
+    //Opcion
+    string NombreOpcion;
 
 };
 
