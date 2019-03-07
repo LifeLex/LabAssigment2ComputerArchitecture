@@ -22,8 +22,8 @@ MainWindow::~MainWindow()
 //GUARDAR
 void MainWindow::on_GuardarpushButton_clicked()
 {
-    ui->HPSlider->setRange(0,999);
-    ui->HPSlider->setValue(0);
+
+
 
     //atributos locales
     //Main Config
@@ -48,8 +48,9 @@ void MainWindow::on_GuardarpushButton_clicked()
     //ruedas
     lRuedas = ui->NRuedascomboBox->currentText().toStdString();
     //HP
+    ui->HPSlider->setRange(0,999);
     int lPotencia = ui->HPSlider->value();
-    ui->lcdNumber->display(lPotencia);
+
     lHP = to_string(lPotencia);
     //Color
     lColor = ui->ColorcomboBox->currentText().toStdString();
@@ -174,6 +175,13 @@ void MainWindow::on_ResetpushButton_clicked()
 {
 
     garaje.clear();
+    ui->HPSlider->setValue(0);
+    ui->BocinasspinBox->setValue(0);
+    ui->BurbujacheckBox->setChecked(false);
+    ui->PortavasoscheckBox->setChecked(false);
+    ui->KitRadioButton->setChecked(false);
+    ui->RuedaRpuestoradioButton->setChecked(false);
+    ui->RuedaRpuestoradioButton->clearFocus();
     ui->textEdit->setText(QString::fromStdString(""));
     ui->lineEdit->setText(QString::fromStdString(""));
     ui->MatriculalineEdit->setText(QString::fromStdString(""));
