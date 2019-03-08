@@ -175,6 +175,9 @@ void MainWindow::on_ResetpushButton_clicked()
 {
 
     garaje.clear();
+    int x= garaje.size();
+   cout<< x << endl;
+
     ui->HPSlider->setValue(0);
     ui->BocinasspinBox->setValue(0);
     ui->BurbujacheckBox->setChecked(false);
