@@ -41,7 +41,7 @@ void MainWindow::on_GuardarpushButton_clicked()
     string lNumeroBocinas;
 
     //guardo el texto de la interfaz en los atributos locales
-    //nombre
+
     QString QSNombre = ui->nombreLineEdit->text();
     lNombre = QSNombre.toStdString();
     ui->nombreLineEdit->setText("");
